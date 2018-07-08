@@ -1,0 +1,39 @@
+USE [DBNAME]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Cart](
+	[member] [nvarchar](32) NOT NULL,
+	[productID] [nvarchar](10) NOT NULL,
+	[quantity] [smallint] NOT NULL,
+	[ice] [nchar](2) NOT NULL,
+	[sugar] [nchar](2) NOT NULL,
+	[unixTime] [nvarchar](64) NOT NULL,
+ CONSTRAINT [PK_Cart] PRIMARY KEY CLUSTERED 
+(
+	[member] ASC,
+	[unixTime] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Cart]  WITH CHECK ADD  CONSTRAINT [FK_Cart_Member] FOREIGN KEY([member])
+REFERENCES [dbo].[Member] ([member])
+GO
+
+ALTER TABLE [dbo].[Cart] CHECK CONSTRAINT [FK_Cart_Member]
+GO
+
+ALTER TABLE [dbo].[Cart]  WITH CHECK ADD  CONSTRAINT [FK_Cart_Product] FOREIGN KEY([productID])
+REFERENCES [dbo].[Product] ([productID])
+GO
+
+ALTER TABLE [dbo].[Cart] CHECK CONSTRAINT [FK_Cart_Product]
+GO
+
+

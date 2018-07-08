@@ -1,0 +1,24 @@
+USE [DANAME]
+GO
+
+/****** Object:  Table [dbo].[Member]    Script Date: 2018/7/8 ¤U¤È 02:00:14 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Member](
+	[member] [nvarchar](32) NOT NULL,
+	[password] [nchar](60) NOT NULL,
+	[name] [nvarchar](32) NOT NULL,
+	[number] [nvarchar](10) NULL,
+	[email] [nvarchar](32) NULL,
+	[address] [nvarchar](60) NULL,
+ CONSTRAINT [PK_member] PRIMARY KEY CLUSTERED 
+(
+	[member] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
