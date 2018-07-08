@@ -29,5 +29,5 @@
 6.在各個文字檔裡把[DBNAME]更改成實際資料庫名稱  
 7.在MSSQL網站上根據文字檔案名稱依序使用指令  
 create_Member => create_Product => create_Cart => create_Transactions => create_soldProducts  
-8.在(網站伺服器IP)/Register.aspx頁面註冊admin帳號
-
+8.在(網站伺服器IP)/Register.aspx頁面註冊admin帳號，並登入帳號  
+9.在(網站伺服器IP)/AdminTools/addItems.aspx新增一些商品(飲料)
